@@ -114,12 +114,18 @@ def process_file(stp_file_path):
     session.Parts.CloseAll(NXOpen.BasePartCloseModified.DontCloseModified, None)
 
 
-file_path = 'D:\ACCEPTED_NX_MODELS\Q5\FEED.txt'
+def main():
+    file_path = 'D:\ACCEPTED_NX_MODELS\Q5\FEED.txt'
 
-with open(file_path) as this_file:
-    for line in this_file:
-        leaf_list.clear()
-        node_list.clear()
-        process_file(line)
+    with open(file_path) as this_file:
+        for line in this_file:
+            leaf_list.clear()
+            node_list.clear()
+            process_file(line)
 
-print('Done!')
+    print('Done!')
+
+
+if __name__ == '__main__':
+    main()
+
